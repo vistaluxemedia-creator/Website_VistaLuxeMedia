@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Consent Mode defaults (must load BEFORE GTM) -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+
+  // Default: everything denied until choice is made
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied',
+    wait_for_update: 500
+  });
+</script>
+
+
+  <link rel="canonical" href="https://vistaluxe.media/success">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Enquiry Received | Vista Luxe Media</title>
+  <meta name="description" content="Thanks for your enquiry. Vista Luxe Media will get back to you shortly." />
+
+  <!-- dataLayer push BEFORE GTM: passes identifiers for Enhanced Conversions -->
+  <script>
+    (function () {
+      window.dataLayer = window.dataLayer || [];
+      const p = new URLSearchParams(location.search);
+      const name  = p.get('name')  || '';
+      const email = p.get('email') || '';
+      const msg   = p.get('msg')   || '';
+      // Only push if we have something useful to attribute
+      if (name || email || msg) {
+        dataLayer.push({
+          event: 'form_submit_success',
+          form_id: 'contact-form',
+          lead_source: 'website',
+          name: name,
+          email: email,
+          message: msg
+        });
+      }
+      // Expose for rendering
+      window.__VLM = { name, email, msg };
+    })();
+  </script>
+
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts & Theme -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300..800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --ink:#0b0b0f; --ink-2:#12121a;
+      --gold-1:#d8b25c; --gold-2:#f0d58a;
+    }
+     body {
+font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system,
+               Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+               "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+               -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+             background-color: var(--ink); /* Deep dark background */
+            color: #f0f4f8; /* Off-white text */
+            scroll-behavior: smooth;
+        }
+    .btn-zoom{transition:transform .2s ease;will-change:transform}
+    .btn-zoom:hover{transform:scale(1.06)}
+    .header--glass{background:rgba(18,18,26,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+      border-bottom:1px solid rgba(240,213,138,.12);box-shadow:0 6px 20px rgba(0,0,0,.25)}
+    /* Confetti */
+    .confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+    .confetti i{position:absolute;top:-12px;width:8px;height:14px;border-radius:2px;animation:fall linear forwards}
+    @keyframes fall{to{transform:translateY(115vh) rotate(360deg);}}
+    /* Vista Luxe buttons */
+.btn-gold{
+  background: linear-gradient(135deg, var(--gold-1), var(--gold-2));
+  color: var(--ink);
+  font-weight: 600;
+  padding: .5rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(240,213,138,.6);
+  transition: transform .15s ease, box-shadow .2s ease, opacity .2s ease;
+}
+.btn-gold:hover{ transform: scale(1.03); box-shadow: 0 10px 20px rgba(240,213,138,.18); }
+
+.btn-outline{
+  background: transparent;
+  color: var(--gold-2);
+  font-weight: 600;
+  padding: .5rem 1rem;
+  border-radius: 9999px;
+  border: 2px solid var(--gold-2);
+  transition: background .2s, color .2s, transform .15s ease;
+}
+.btn-outline:hover{ background: var(--gold-2); color: var(--ink); transform: scale(1.02); }
+    
+  </style>
+</head>
+<body class="antialiased">
+  
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 header--glass">
+    <nav class="mx-auto max-w-screen-2xl px-3 sm:px-4 lg:px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="group flex items-center gap-3 text-3xl font-extrabold text-[var(--gold-2)] tracking-wider btn-zoom">
+        <img src="assets/images/logo.png" alt="Vista Luxe Media logo"
+             class="h-11 w-11 rounded-full object-cover border-2 border-[var(--gold-1)] shadow"/>
+        <span>VISTA LUXE<span class="text-white"> MEDIA</span></span>
+      </a>
+      <div class="space-x-4 hidden sm:block">
+        <a href="index.html#services" class="text-gray-300 hover:text-[var(--gold-2)] transition btn-zoom">What We Forge</a>
+        <a href="index.html#about" class="text-gray-300 hover:text-[var(--gold-2)] transition btn-zoom">Why Vista Luxe?</a>
+        <a href="index.html#goals" class="text-gray-300 hover:text-[var(--gold-2)] transition btn-zoom">Our Goals</a>
+        <a href="leadership.html" class="text-gray-300 hover:text-[var(--gold-2)] transition btn-zoom">Leadership</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Success Hero -->
+  <section class="relative min-h-[70vh] flex items-center">
+    <div class="absolute inset-0 -z-10 bg-[url('https://images.unsplash.com/photo-1517404215738-15263e9f9178?q=80&w=2400&auto=format&fit=crop')] bg-cover bg-center"></div>
+    <div class="absolute inset-0 -z-10 bg-black/70 backdrop-blur-sm"></div>
+    <div class="confetti" id="confetti"></div>
+
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <span class="inline-flex items-center justify-center h-14 w-14 rounded-2xl
+                    bg-[var(--gold-2)] text-[var(--ink)] text-2xl font-extrabold shadow">✓</span>
+      <h1 class="mt-6 text-5xl sm:text-6xl font-black tracking-tight text-white">
+        Enquiry <span class="text-[var(--gold-2)]">Received</span>
+      </h1>
+      <p id="thanks-line" class="mt-4 text-lg text-gray-300">
+        Thanks! Your message is in. We’ll reply within one business day.
+      </p>
+
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <a href="tel:+16476742223"
+           class="px-6 py-3 rounded-full bg-[var(--gold-2)] text-[var(--ink)] font-semibold hover:bg-white transition btn-zoom">
+          Call us now
+        </a>
+        <a id="email-cta"
+           href="https://mail.google.com/mail/?view=cm&fs=1&to=vistaluxemedia@gmail.com"
+           class="px-6 py-3 rounded-full border-2 border-[var(--gold-2)] text-[var(--gold-2)]
+                  hover:bg-[var(--gold-2)] hover:text-[var(--ink)] transition btn-zoom">
+          Send more details
+        </a>
+        <a href="index.html#services"
+           class="px-6 py-3 rounded-full border-2 border-gray-600 text-gray-300
+                  hover:border-[var(--gold-2)] hover:text-[var(--gold-2)] transition btn-zoom">
+          Explore services
+        </a>
+      </div>
+
+      <p class="mt-6 text-sm text-gray-400" id="echo-msg" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[var(--ink-2)] py-10 mt-10 border-t border-[rgba(240,213,138,.12)]">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <a href="index.html" class="text-xl font-semibold text-[var(--gold-2)] hover:opacity-90 transition">Vista Luxe Media INC.</a>
+      <p class="text-gray-400 mt-1">&copy; 2025 Vista Luxe Media. All rights reserved.</p>
+      <div class="mt-6 space-x-5 text-sm">
+        <a href="privacy.html" class="text-gray-400 hover:text-[var(--gold-2)] transition">Privacy</a>
+        <span class="text-gray-600">•</span>
+        <a href="terms.html" class="text-gray-400 hover:text-[var(--gold-2)] transition">Terms</a>
+                <span class="text-gray-600">•</span>
+        
+        <a href="#" class="text-gray-400 hover:text-[var(--gold-2)] transition" onclick="window.dispatchEvent(new Event('openCookieManager')); return false;">
+  Cookie preferences
+</a>
+      </div>
+    </div>
+  </footer>
+  
+ 
+  <script>
+    // Personalize copy and mailto with the passed info
+    (function () {
+      const { name, email, msg } = window.__VLM || {};
+      const thanks = document.getElementById('thanks-line');
+      if (name) {
+        thanks.innerHTML = `Thanks, <span class="text-white font-semibold">${name}</span>! Your message is in. We’ll reply within one business day.`;
+      }
+      if (msg) {
+        const echo = document.getElementById('echo-msg');
+        echo.textContent = `We received: “${msg.slice(0, 240)}${msg.length>240?'…':''}”`;
+      }
+      // Prefill email CTA body
+      const mail = document.getElementById('email-cta');
+      if (mail) {
+        const subject = encodeURIComponent('Re: My enquiry on vistaluxe.media');
+        const body = encodeURIComponent(
+`Hi Vista Luxe Media,
+
+Thanks for getting back to me.
+
+Name: ${name || ''}
+Email: ${email || ''}
+Original enquiry:
+${msg || ''}
+
+— Sent from success page`);
+        mail.href = `mailto:vistaluxemedia@gmail.com?subject=${subject}&body=${body}`;
+      }
+    })();
+
+    // Lightweight confetti
+    (function () {
+      const colors = ['#f0d58a','#d8b25c','#ffffff','#a7863b'];
+      const c = document.getElementById('confetti');
+      const pieces = 50;
+      for (let i=0;i<pieces;i++){
+        const piece = document.createElement('i');
+        piece.style.left = Math.random()*100 + 'vw';
+        piece.style.background = colors[i % colors.length];
+        piece.style.animationDuration = (2.0 + Math.random()*1.8)+'s';
+        piece.style.animationDelay = (Math.random()*1.2)+'s';
+        piece.style.opacity = (0.7 + Math.random()*0.3).toFixed(2);
+        c.appendChild(piece);
+      }
+    })();
+  </script>
+  <script>
+(() => {
+  const KEY = 'vistaLuxe_cookie_consent_v2';
+  const $ = s => document.querySelector(s);
+
+  function showBanner(){
+    const b = $('#vlm-cookie-banner');
+    if(!b) return;
+    b.classList.remove('opacity-0','pointer-events-none');
+    b.style.transform = 'translate(-50%, 10px)';
+    requestAnimationFrame(()=> b.style.transform = 'translate(-50%, 0)');
+  }
+  function hideBanner(){ $('#vlm-cookie-banner')?.classList.add('opacity-0','pointer-events-none'); }
+  function openModal(){ $('#vlm-cookie-modal')?.classList.remove('hidden'); }
+  function closeModal(){ $('#vlm-cookie-modal')?.classList.add('hidden'); }
+
+  function saveConsent(c){ localStorage.setItem(KEY, JSON.stringify(c)); }
+  function readConsent(){ try { return JSON.parse(localStorage.getItem(KEY)||''); } catch { return null; } }
+
+  // Apply to Consent Mode v2
+  function applyConsent(c){
+    const g = v => v ? 'granted' : 'denied';
+    gtag('consent', 'update', {
+      analytics_storage: g(!!c.analytics),
+      ad_storage: g(!!c.ads),
+      ad_user_data: g(!!c.ads),
+      ad_personalization: g(!!c.ads)
+    });
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'cookie_consent_update', consent: { analytics: !!c.analytics, ads: !!c.ads }});
+  }
+
+  // Banner actions
+  $('#vlm-accept-all')?.addEventListener('click', () => {
+    const c = { analytics: true, ads: true };
+    saveConsent(c); applyConsent(c); hideBanner();
+  });
+  $('#vlm-open-prefs')?.addEventListener('click', () => {
+    // Pre-fill from stored (if any)
+    const c = readConsent() || { analytics:false, ads:false };
+    const a = $('#vlm-opt-analytics'); if(a) a.checked = !!c.analytics;
+    const d = $('#vlm-opt-ads');       if(d) d.checked = !!c.ads;
+    openModal();
+  });
+
+  // Modal actions
+  $('#vlm-modal-accept')?.addEventListener('click', () => {
+    const c = { analytics: true, ads: true };
+    saveConsent(c); applyConsent(c); closeModal(); hideBanner();
+  });
+  $('#vlm-modal-save')?.addEventListener('click', () => {
+    const c = {
+      analytics: !!$('#vlm-opt-analytics')?.checked,
+      ads:       !!$('#vlm-opt-ads')?.checked
+    };
+    saveConsent(c); applyConsent(c); closeModal(); hideBanner();
+  });
+
+  // Global opener you can use from footer
+  window.addEventListener('openCookieManager', () => {
+    const c = readConsent() || { analytics:false, ads:false };
+    const a = $('#vlm-opt-analytics'); if(a) a.checked = !!c.analytics;
+    const d = $('#vlm-opt-ads');       if(d) d.checked = !!c.ads;
+    openModal();
+  });
+
+  // First load: show banner only if there’s no stored decision
+  const existing = readConsent();
+  if (existing && typeof existing === 'object') {
+    applyConsent(existing);
+  } else {
+    showBanner();
+  }
+})();
+</script>
+  
+
+<!-- Cookie Banner (Accept + Manage) -->
+<div id="vlm-cookie-banner"
+     class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[92%] md:w-auto max-w-[900px]
+            bg-[var(--ink-2)] text-gray-200 border border-[var(--gold-1)]
+            shadow-2xl rounded-xl px-5 py-4 flex flex-col md:flex-row gap-3
+            items-start md:items-center justify-between z-[9999]
+            opacity-0 pointer-events-none transition-all duration-500 ease-out">
+  <p class="text-sm md:text-base text-gray-300 leading-snug">
+    🍪 We use cookies for analytics and ads. Choose your preferences:
+  </p>
+  <div class="flex items-center gap-3">
+    <button id="vlm-accept-all" class="btn-gold">Accept</button>
+    <button id="vlm-open-prefs" class="btn-outline">Manage</button>
+  </div>
+</div>
+
+<!-- Preferences Modal -->
+<div id="vlm-cookie-modal" class="fixed inset-0 z-[10000] hidden">
+  <div class="absolute inset-0 bg-black/70"></div>
+  <div class="relative mx-auto mt-20 w-[92%] max-w-xl
+              rounded-2xl border border-[var(--gold-1)] bg-[var(--ink-2)]
+              shadow-[0_30px_120px_rgba(0,0,0,.6)] p-6">
+    <h3 class="text-xl font-extrabold text-white">Cookie preferences</h3>
+    <p class="text-sm text-gray-300 mt-1">Necessary cookies are always on.</p>
+
+    <div class="mt-5 space-y-4">
+      <label class="flex items-start gap-3">
+        <input type="checkbox" checked disabled class="mt-1 accent-[var(--gold-2)]">
+        <span>
+          <span class="block text-white font-semibold">Necessary</span>
+          <span class="text-sm text-gray-400">Security & core features.</span>
+        </span>
+      </label>
+
+      <label class="flex items-start gap-3">
+        <input id="vlm-opt-analytics" type="checkbox" class="mt-1 accent-[var(--gold-2)]">
+        <span>
+          <span class="block text-white font-semibold">Analytics</span>
+          <span class="text-sm text-gray-400">Helps us improve the site.</span>
+        </span>
+      </label>
+
+      <label class="flex items-start gap-3">
+        <input id="vlm-opt-ads" type="checkbox" class="mt-1 accent-[var(--gold-2)]">
+        <span>
+          <span class="block text-white font-semibold">Ads & Personalization</span>
+          <span class="text-sm text-gray-400">Personalized ads & measurement.</span>
+        </span>
+      </label>
+    </div>
+
+    <div class="mt-6 flex flex-wrap gap-3 justify-end">
+      <button id="vlm-modal-save" class="btn-outline">Save</button>
+      <button id="vlm-modal-accept" class="btn-gold">Accept</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(() => {
+  const KEY = 'vistaLuxe_cookie_consent_v2';
+  const $ = s => document.querySelector(s);
+
+  // UI helpers
+  function showBanner(){
+    const b = $('#vlm-cookie-banner');
+    if(!b) return;
+    b.classList.remove('opacity-0','pointer-events-none');
+    b.style.transform = 'translate(-50%, 10px)';
+    requestAnimationFrame(()=> b.style.transform = 'translate(-50%, 0)');
+  }
+  function hideBanner(){ $('#vlm-cookie-banner')?.classList.add('opacity-0','pointer-events-none'); }
+  function openModal(){ $('#vlm-cookie-modal')?.classList.remove('hidden'); }
+  function closeModal(){ $('#vlm-cookie-modal')?.classList.add('hidden'); }
+
+  // Storage
+  function saveConsent(c){ localStorage.setItem(KEY, JSON.stringify(c)); }
+  function readConsent(){ try { return JSON.parse(localStorage.getItem(KEY)||''); } catch { return null; } }
+
+  // Apply to Consent Mode v2
+  function applyConsent(c){
+    const g = v => v ? 'granted' : 'denied';
+    gtag('consent', 'update', {
+      analytics_storage: g(!!c.analytics),
+      ad_storage: g(!!c.ads),
+      ad_user_data: g(!!c.ads),
+      ad_personalization: g(!!c.ads)
+    });
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event:'cookie_consent_update', consent:{ analytics:!!c.analytics, ads:!!c.ads }});
+  }
+
+  // Banner buttons
+  $('#vlm-accept-all')?.addEventListener('click', () => {
+    const c = { analytics:true, ads:true };
+    saveConsent(c); applyConsent(c); hideBanner();
+  });
+
+  $('#vlm-open-prefs')?.addEventListener('click', () => {
+    const c = readConsent() || { analytics:false, ads:false };
+    const a = $('#vlm-opt-analytics'); if(a) a.checked = !!c.analytics;
+    const d = $('#vlm-opt-ads');       if(d) d.checked = !!c.ads;
+    openModal();
+  });
+
+  // Modal buttons
+  $('#vlm-modal-accept')?.addEventListener('click', () => {
+    const c = { analytics:true, ads:true };
+    saveConsent(c); applyConsent(c); closeModal(); hideBanner();
+  });
+
+  $('#vlm-modal-save')?.addEventListener('click', () => {
+    const c = {
+      analytics: !!$('#vlm-opt-analytics')?.checked,
+      ads: !!$('#vlm-opt-ads')?.checked
+    };
+    saveConsent(c); applyConsent(c); closeModal(); hideBanner();
+  });
+
+  // Footer link opens the modal:
+  // <a href="#" onclick="window.dispatchEvent(new Event('openCookieManager')); return false;">Cookie preferences</a>
+  window.addEventListener('openCookieManager', () => {
+    const c = readConsent() || { analytics:false, ads:false };
+    const a = $('#vlm-opt-analytics'); if(a) a.checked = !!c.analytics;
+    const d = $('#vlm-opt-ads');       if(d) d.checked = !!c.ads;
+    openModal();
+  });
+
+  // First load
+  const existing = readConsent();
+  if (existing && typeof existing === 'object') {
+    applyConsent(existing); // user already chose
+  } else {
+    showBanner();           // show banner until they choose
+  }
+})();
+</script>
+  
+</body>
+</html>
